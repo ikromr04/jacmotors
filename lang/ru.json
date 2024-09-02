@@ -1,5 +1,19 @@
 {
   "title": {
-    "page.index": "Главная"
-  }
+    "page.index": "Главная",
+    "page.models": "Модельный ряд",
+    "page.service": "Услуги и сервис",
+    "page.offers": "Спец предложения",
+    "page.address": "Наш адрес",
+    "page.contacts": "Контакты"
+  },
+  "header": {
+    "menu": "Меню",
+    "closeMenu": "Скрыть меню"
+  },
+  "telegram": "Телеграм",
+  "instagram": "Инстаграм",
+  "facebook": "Фейсбук",
+  "logo": "Логотип Jac Motors",
+  "toTheMain": "На главную"
 }

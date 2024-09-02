@@ -10,4 +10,14 @@ class PageController extends Controller
   {
     return view('pages.index');
   }
+
+  public function models()
+  {
+    return view('pages.models');
+  }
+
+  public function service()
+  {
+    return view('pages.service');
+  }
 }

@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
     Schema::defaultStringLength(191);
     Paginator::useBootstrap();
 
-    view()->composer(['components.layouts.app'], function ($view) {
+    view()->composer(['*'], function ($view) {
       $routeName = request()->route()->getName();
 
       $documentTitle = env('APP_NAME') . ' - ' . __('title')[$routeName];
