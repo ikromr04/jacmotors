@@ -15,7 +15,7 @@
   <title>{{ $documentTitle }}</title>
 </head>
 
-<body class="text-[14px] overflow-hidden group">
+<body class="text-[14px] overflow-hidden group text-gray-800 tracking-wide">
   <div id="app"></div>
 
   @viteReactRefresh

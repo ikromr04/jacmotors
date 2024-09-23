@@ -1,6 +1,7 @@
 import React from 'react';
 import MainLogo from '../ui/main-logo';
 import { Icons } from '../icons';
+import PageNavigation from './page-navigation/page-navigation';
 
 export default function PageSidebar(): JSX.Element {
   return (
@@ -17,6 +18,8 @@ export default function PageSidebar(): JSX.Element {
           <Icons.anglesLeft width={16} height={16} />
         </button>
       </header>
+
+      <PageNavigation />
     </aside>
   );
 }
