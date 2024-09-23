@@ -25,9 +25,13 @@ class AppServiceProvider extends ServiceProvider
     Paginator::useBootstrap();
 
     view()->composer(['*'], function ($view) {
-      $routeName = request()->route()->getName();
+      $routeName = '';
+      $documentTitle = '';
 
-      $documentTitle = env('APP_NAME') . ' - ' . __('title')[$routeName];
+      if (request()->route()) {
+        $routeName = request()->route()->getName();
+        $documentTitle = env('APP_NAME') . ' - ' . __('title')[$routeName];
+      }
 
       return $view->with([
         'routeName' => $routeName,

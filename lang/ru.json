@@ -5,7 +5,8 @@
     "page.service": "Услуги и сервис",
     "page.offers": "Спец предложения",
     "page.address": "Наш адрес",
-    "page.contacts": "Контакты"
+    "page.contacts": "Контакты",
+    "page.admin": "Авдмин панель"
   },
   "header": {
     "menu": "Меню",

@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply w-[90vw] max-w-screen-2xl mx-auto;
+}
+
+.button {
+  @apply relative flex justify-center items-center transition-all duration-300;
+}

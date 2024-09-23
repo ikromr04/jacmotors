@@ -20,4 +20,9 @@ class PageController extends Controller
   {
     return view('pages.service');
   }
+
+  public function admin()
+  {
+    return view('pages.admin');
+  }
 }

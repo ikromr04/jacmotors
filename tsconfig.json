@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "resources/js/admin/*"
+      ]
+    }
+  },
+  "include": [
+    "resources/js/admin/**/*.tsx",
+    "resources/js/admin/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
