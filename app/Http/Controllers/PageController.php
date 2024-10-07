@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Banner;
+use App\Models\Car;
 use Illuminate\Http\Request;
 use stdClass;
 
@@ -13,6 +14,7 @@ class PageController extends Controller
     $data = new stdClass();
 
     $data->banners = Banner::get();
+    $data->testDrives = Car::where('test_drive', true)->get();
 
     return view('pages.index', compact('data'));
   }
