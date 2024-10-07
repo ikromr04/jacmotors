@@ -11,8 +11,9 @@ export default function PageLayout({
     <div className="w-screen h-screen bg-gray-100 flex">
       <PageSidebar />
 
-      <div className="flex flex-col w-[calc(100vw-320px)] group-[.menu-hidden]:w-screen overflow-auto">
+      <div className="flex flex-col w-[calc(100vw-320px)] group-[.menu-hidden]:w-screen overflow-auto transition-all duration-300">
         <PageHeader />
+
         <div className="py-6 px-8">
           {children}
         </div>

@@ -1,4 +1,4 @@
-<header class="bg-[#181818] text-white uppercase font-medium py-5">
+<header class="bg-[#181818] text-white uppercase font-medium py-5 min-h-[72px]">
   <div class="container grid grid-cols-3 items-center lg:flex lg:gap-x-8 xl:gap-x-14">
     <div class="flex justify-start lg:hidden">
       <button class="uppercase hover:text-[#BA2031] transition-all duration-300 focus:text-[#BA2031] outline-none focus:outline-none" type="button" onclick="document.body.classList.add('menu-shown')">

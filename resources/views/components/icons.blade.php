@@ -13,5 +13,8 @@
     <symbol id="close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
       <path d="M18 6 6 18M6 6l12 12" />
     </symbol>
+    <symbol id="more-info" viewBox="0 0 4 10" width="4" height="10" fill="none">
+      <path fill="currentColor" d="m0 10 3.858-4.453a.582.582 0 0 0 .016-.743L.064 0S1.667 2.518 2 4.197c.062.311.116.966 0 1.26C1 7.975 0 10 0 10Z"/>
+    </symbol>
   </svg>
 </div>

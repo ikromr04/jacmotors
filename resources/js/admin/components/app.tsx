@@ -7,11 +7,8 @@ export default function App(): JSX.Element {
     <BrowserRouter>
       <Routes>
         <Route path="/admin" element={<IndexPage />} />
-        <Route path="/admin/banners" element={<IndexPage />} />
-        <Route path="/admin/banners/home" element={<IndexPage />} />
-        <Route path="/admin/banners/service" element={<IndexPage />} />
+        <Route path="/admin/banners/:banner" element={<IndexPage />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
