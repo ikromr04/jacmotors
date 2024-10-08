@@ -5,3 +5,21 @@
 .container {
   @apply w-[90vw] max-w-screen-2xl mx-auto;
 }
+
+.mask-left {
+  mask-image: url("data:image/svg+xml,%3Csvg width='1728' height='514' viewBox='0 0 1728 514' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H1728L1612.74 514H0V252.5V0Z' fill='black' fill-opacity='0.89'/%3E%3C/svg%3E%0A");
+  mask-position: right;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+}
+
+.mask-right {
+  mask-image: url("data:image/svg+xml,%3Csvg width='1729' height='515' viewBox='0 0 1729 515' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1728.5 514.5H0.225586L115.5 0.5H1728.5V262V514.5Z' fill='black' fill-opacity='0.89'/%3E%3C/svg%3E%0A");
+  mask-position: left;
+  mask-repeat: no-repeat;
+  mask-size: cover;
+}
+
+.title {
+  
+}

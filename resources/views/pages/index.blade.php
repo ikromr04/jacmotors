@@ -45,6 +45,13 @@
         }
       }
     }
+
+    .test-drive {
+      .swiper-button-disabled {
+        display: none;
+        visibility: hidden;
+      }
+    }
   </style>
 @endsection
 
@@ -77,14 +84,31 @@
     </div>
 
     <div class="swiper test-drive overflow-hidden relative bg-slate-400 text-white">
+      <div class="container relative">
+        <div class="absolute top-6 left-0 flex gap-x-2">
+          <button class="swiper-button-prev after:hidden text-inherit m-0 transform -scale-x-100 flex items-center justify-center w-8 h-8 relative bottom-0 top-0 left-0 right-0">
+            <svg class="flex items-center !w-[26px] !h-[22px]" width="26" height="22">
+              <use xlink:href="#arrow" />
+            </svg>
+          </button>
+          <button class="swiper-button-next after:hidden text-inherit m-0 flex items-center justify-center w-8 h-8 relative bottom-0 top-0 left-0 right-0">
+            <svg class="flex items-center !w-[26px] !h-[22px]" width="26" height="22">
+              <use xlink:href="#arrow" />
+            </svg>
+          </button>
+        </div>
+      </div>
       <div class="swiper-wrapper relative">
         @foreach ($data->testDrives as $car)
-          <div class="swiper-slide">
-            <div class="container flex flex-col uppercase justify-between h-full min-h-[520px] pb-6">
+          <div class="swiper-slide overflow-hidden">
+            <div class="container flex flex-col uppercase justify-between h-full min-h-[520px] pb-6 pt-20">
+              <img class="absolute -top-[2px] right-[calc(50%-64px)] w-[calc(50%+65px)] brightness-[30%] -z-10 h-[110%] object-cover mask-left" src="{{ $car->main_image }}" width="1440" height="560" alt="{{ $car->name }}">
+              <img class="absolute -top-[2px] left-[calc(50%-65px)] w-[calc(50%+65px)] h-[110%] object-cover -z-10 mask-right" src="{{ $car->exterior_image }}" width="1440" height="560" alt="{{ $car->name }}">
+
               <div>
                 <h3 class="text-5xl font-bold mb-4">{{ $car->name }}</h3>
 
-                <a class="text-sm flex items-center gap-3 transition-all duration-300 hover:opacity-60 lg:text-base" href="{{ $banner->link }}">
+                <a class="text-sm flex items-center gap-3 max-w-max transition-all duration-300 hover:opacity-60 lg:text-base" href="{{ route('page.models.show', $car->name) }}">
                   Подробнее
                   <span class="flex items-center justify-center w-5 h-5 rounded-full border pl-[1px]">
                     <svg width="4" height="10">
@@ -94,7 +118,7 @@
                 </a>
               </div>
 
-              <a class="flex items-center gap-3 uppercase" href="{{ route('page.models.show', $car->name) }}">
+              <a class="flex items-center gap-3 uppercase max-w-max" href="{{ route('page.test-drive', $car->name) }}">
                 <svg width="33" height="37">
                   <use xlink:href="#sign-up" />
                 </svg>
@@ -104,20 +128,11 @@
           </div>
         @endforeach
       </div>
-
-      <div class="container">
-        <div class="swiper-button-prev after:hidden text-inherit">
-          <svg width="26" height="22">
-            <use xlink:href="#arrow" />
-          </svg>
-        </div>
-        <div class="swiper-button-next after:hidden text-inherit">
-          <svg width="26" height="22">
-            <use xlink:href="#arrow" />
-          </svg>
-        </div>
-      </div>
     </div>
+
+    <section class="container">
+      <h2 class="title">Модельный ряд</h2>
+    </section>
   </main>
 @endsection
 
@@ -134,8 +149,9 @@
     });
 
     new Swiper('.test-drive', {
-      pagination: {
-        el: '.test-drive .swiper-pagination',
+      navigation: {
+        nextEl: '.test-drive .swiper-button-next',
+        prevEl: '.test-drive .swiper-button-prev',
       },
     });
   </script>
