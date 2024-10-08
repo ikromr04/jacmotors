@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Banner;
 use App\Models\Car;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use stdClass;
 
@@ -15,6 +16,8 @@ class PageController extends Controller
 
     $data->banners = Banner::get();
     $data->testDrives = Car::where('test_drive', true)->get();
+    $data->categories = Category::get();
+    $data->models = Car::get();
 
     return view('pages.index', compact('data'));
   }
