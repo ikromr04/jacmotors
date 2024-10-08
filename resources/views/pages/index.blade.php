@@ -15,6 +15,17 @@
         }
       }
 
+      .swiper-pagination {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 12px;
+
+        @media (min-width: 1024px) {
+          margin-bottom: 0;
+        }
+      }
+
       .swiper-pagination-bullet {
         background-color: white;
         opacity: 1;
@@ -112,12 +123,15 @@
     [data-models="1"] [data-slide]:not([data-slide="1"]) {
       display: none;
     }
+
     [data-models="2"] [data-slide]:not([data-slide="2"]) {
       display: none;
     }
+
     [data-models="3"] [data-slide]:not([data-slide="3"]) {
       display: none;
     }
+
     [data-models="4"] [data-slide]:not([data-slide="4"]) {
       display: none;
     }
@@ -187,7 +201,7 @@
                 </a>
               </div>
 
-              <a class="flex items-center gap-3 uppercase max-w-max" href="{{ route('page.test-drive', $car->name) }}">
+              <a class="flex items-center gap-3 uppercase max-w-max" href="{{ route('page.test-drive.show', $car->name) }}">
                 <svg width="33" height="37">
                   <use xlink:href="#sign-up" />
                 </svg>
@@ -255,6 +269,64 @@
               <use xlink:href="#arrow" />
             </svg>
           </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#2D2D2D] pt-8 pb-10 text-white lg:pt-14 lg:pb-16">
+      <div class="container">
+        <h2 class="title mb-10">Услуги и сервис</h2>
+
+        <ul class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <li>
+            <a class="flex flex-col items-center gap-10 pb-4 border-b-2">
+              <svg width="86" height="86">
+                <use xlink:href="#station" />
+              </svg>
+              Зарядная станция
+            </a>
+          </li>
+          <li>
+            <a class="flex flex-col items-center gap-10 pb-4 hover:border-b-2" href="{{ route('page.test-drive') }}">
+              <svg width="85" height="86">
+                <use xlink:href="#test-drive" />
+              </svg>
+              Записаться на Тест-Драйв
+            </a>
+          </li>
+          <li>
+            <a class="flex flex-col items-center gap-10 pb-4 hover:border-b-2" href="{{ route('page.service') }}">
+              <svg width="86" height="86">
+                <use xlink:href="#service" />
+              </svg>
+              Сервис
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mb-10 lg:mb-20">
+      <h2 class="title mt-12 mb-10">Спец предложения</h2>
+
+      <div class="text-white lg:grid lg:grid-cols-2">
+        <img class="h-[252px] w-full object-cover" src="{{ asset('images/special-offer.jpg') }}" width="1000" height="252" alt="Спец предложения">
+
+        <div class="bg-[#303030]">
+          <div class="container py-8 lg:w-auto px-10 lg:flex lg:flex-col lg:justify-center lg:h-[252px]">
+            <small class="opacity-70 uppercase mb-4 block">Спецпредложения</small>
+            <h3 class="title !text-left mb-6">
+              Льготный кредит по низкой процентной ставке
+            </h3>
+            <a class="text-sm flex items-center gap-3 max-w-max transition-all duration-300 hover:opacity-60 lg:text-base" href="{{ route('page.service') }}">
+              Подробнее
+              <span class="flex items-center justify-center w-5 h-5 rounded-full border pl-[1px]">
+                <svg width="4" height="10">
+                  <use xlink:href="#more-info" />
+                </svg>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
