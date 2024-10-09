@@ -13,7 +13,6 @@ class PageController extends Controller
   public function index()
   {
     $data = new stdClass();
-
     $data->banners = Banner::get();
     $data->testDrives = Car::where('test_drive', true)->get();
     $data->categories = Category::get();
@@ -24,7 +23,11 @@ class PageController extends Controller
 
   public function models()
   {
-    return view('pages.models');
+    $data = new stdClass();
+    $data->categories = Category::get();
+    $data->models = Car::get();
+
+    return view('pages.models', compact('data'));
   }
 
   public function service()

@@ -244,7 +244,7 @@
                 </div>
                 <p class="text-lg mb-4">{{ $model->price }}</p>
                 <h3 class="font-bold text-xl mb-2">{{ $model->name }}</h3>
-                <a class="text-xs flex items-center gap-3 max-w-max transition-all duration-300 hover:opacity-60 uppercase" href="{{ route('page.models.show', $car->name) }}">
+                <a class="text-xs flex items-center gap-3 max-w-max transition-all duration-300 hover:opacity-60 uppercase" href="{{ route('page.models.show', $model->name) }}">
                   Подробнее
                   <span class="flex items-center justify-center w-5 h-5 rounded-full border pl-[1px]">
                     <svg width="4" height="10">
