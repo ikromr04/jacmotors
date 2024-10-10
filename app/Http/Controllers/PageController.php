@@ -30,6 +30,14 @@ class PageController extends Controller
     return view('pages.models', compact('data'));
   }
 
+  public function modelsShow($name)
+  {
+    $data = new stdClass();
+    $data->model = Car::where('name', $name)->first();
+
+    return view('pages.models-show', compact('data'));
+  }
+
   public function service()
   {
     return view('pages.service');
