@@ -25,7 +25,7 @@
       </a>
     </li>
     <li>
-      <a class="block py-2 hover:text-[#BA2031] transition-all duration-300 focus:text-[#BA2031] outline-none focus:outline-none relative" href="{{ route('page.index') . '#address' }}">
+      <a class="block py-2 hover:text-[#BA2031] transition-all duration-300 focus:text-[#BA2031] outline-none focus:outline-none relative" href="#address" onclick="document.body.classList.remove('menu-shown')">
         {{ __('title')['page.address'] }}
       </a>
     </li>
@@ -45,7 +45,7 @@
       </a>
     </li>
     <li>
-      <a class="flex items-center justify-center w-11 h-11 bg-[#D9D9D9] bg-opacity-30 rounded-full pr-[2px] transition-all duration-300 outline-none focus:outline-none focus:bg-[#BA2031] hover:bg-[#BA2031]" href="" target="_blank">
+      <a class="flex items-center justify-center w-11 h-11 bg-[#D9D9D9] bg-opacity-30 rounded-full pr-[2px] transition-all duration-300 outline-none focus:outline-none focus:bg-[#BA2031] hover:bg-[#BA2031]" href="https://www.instagram.com/jacmotors.tj/" target="_blank">
         <svg width="24" height="24">
           <title>{{ __('instagram') }}</title>
           <use xlink:href="#instagram" />
@@ -53,7 +53,7 @@
       </a>
     </li>
     <li>
-      <a class="flex items-center justify-center w-11 h-11 bg-[#D9D9D9] bg-opacity-30 rounded-full transition-all duration-300 outline-none focus:outline-none focus:bg-[#BA2031] hover:bg-[#BA2031]" href="" target="_blank">
+      <a class="flex items-center justify-center w-11 h-11 bg-[#D9D9D9] bg-opacity-30 rounded-full transition-all duration-300 outline-none focus:outline-none focus:bg-[#BA2031] hover:bg-[#BA2031]" href="https://www.facebook.com/profile.php?id=100089136972855&mibextid=LQQJ4d" target="_blank">
         <svg width="24" height="24">
           <title>{{ __('facebook') }}</title>
           <use xlink:href="#facebook" />

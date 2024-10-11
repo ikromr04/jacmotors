@@ -79,7 +79,7 @@
   </main>
 @endsection
 
-@section('scripts')
+@section('script')
   <script src="https://cdn.jsdelivr.net/npm/pristinejs@1.1.0/dist/pristine.min.js"></script>
   <script type="module">
     const form = document.querySelector('form');

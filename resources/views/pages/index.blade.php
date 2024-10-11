@@ -234,8 +234,8 @@
       <div class="swiper models">
         <div class="swiper-wrapper">
           @foreach ($data->models as $key => $model)
-            <div class="swiper-slide text-white flex rounded-md overflow-hidden min-h-[190px] mb-10" data-slide="{{ $model->category_id }}">
-              <img class="w-[calc(100%-160px)] object-cover" src="{{ $model->main_image }}" width="1440" height="560" alt="{{ $model->name }}">
+            <div class="swiper-slide text-white grid model-grid rounded-md overflow-hidden min-h-[190px] mb-10" data-slide="{{ $model->category_id }}">
+              <img class="w-full h-full object-cover" src="{{ $model->main_image }}" width="1440" height="560" alt="{{ $model->name }}">
 
               <div class="{{ $key % 2 == 0 ? 'bg-[#2D2D2D]' : 'bg-[#646363]' }} grow p-4 min-w-[160px] flex flex-col pb-6">
                 <div class="opacity-70 flex gap-2 items-center leading-none mb-auto text-xs">
@@ -306,7 +306,7 @@
       </div>
     </section>
 
-    <section class="mb-10 lg:mb-20">
+    <section class="mb-10 lg:mb-20" id="offers">
       <h2 class="title mt-12 mb-10">Спец предложения</h2>
 
       <div class="text-white lg:grid lg:grid-cols-2">
@@ -352,7 +352,7 @@
       },
     });
 
-    new Swiper('.models', {
+    const modelsSwiper = new Swiper('.models', {
       navigation: {
         nextEl: '.models .swiper-button-next',
         prevEl: '.models .swiper-button-prev',
@@ -386,6 +386,7 @@
 
     modelsSection.addEventListener('click', (evt) => {
       if (evt.target.closest('[data-category]')) {
+        modelsSwiper.slideTo(0)
         modelsSection.dataset.models = evt.target.dataset.category;
       }
     })

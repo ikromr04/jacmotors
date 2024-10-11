@@ -135,14 +135,16 @@
         </div>
       </section>
 
-      <div class="container flex justify-start">
-        <a class="flex items-center gap-x-4 transition duration-300 hover:text-[#BA2031] py-10 lg:py-16 uppercase font-semibold" href="{{ route('page.test-drive.show', $data->model->name) }}">
-          <svg width="33" height="37">
-            <use xlink:href="#sign-up" />
-          </svg>
-          Записаться на тест-драйв
-        </a>
-      </div>
+      @if ($data->model->test_drive)
+        <div class="container flex justify-start">
+          <a class="flex items-center gap-x-4 transition duration-300 hover:text-[#BA2031] py-10 lg:py-16 uppercase font-semibold" href="{{ route('page.test-drive.show', $data->model->name) }}">
+            <svg width="33" height="37">
+              <use xlink:href="#sign-up" />
+            </svg>
+            Записаться на тест-драйв
+          </a>
+        </div>
+      @endif
     </div>
   </main>
 @endsection

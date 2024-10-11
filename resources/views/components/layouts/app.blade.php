@@ -29,17 +29,10 @@
   @yield('content')
 
   <x-layouts.footer />
-  <div class="fixed bottom-4 right-6 z-[1231241] font-bold">
-    <span class="block sm:hidden text-red-600">xs</span>
-    <span class="hidden sm:block md:hidden text-red-600">sm</span>
-    <span class="hidden md:block lg:hidden text-red-600">md</span>
-    <span class="hidden lg:block xl:hidden text-red-600">lg</span>
-    <span class="hidden xl:block 2xl:hidden text-red-600">xl</span>
-    <span class="hidden 2xl:block text-red-600">2xl</span>
-  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  @stack('scripts')
+  @yield('scripts')
+  @stack('script')
 </body>
 
 </html>

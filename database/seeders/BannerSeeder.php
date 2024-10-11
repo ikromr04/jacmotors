@@ -18,13 +18,13 @@ class BannerSeeder extends Seeder
         "banner" => "home",
         "description" => "Льготный кредит % \nпо низкой процентной ставке",
         "image" => "/images/banners/e-JS4-019.png",
-        "link" => "#",
+        "link" => null,
       ],
       [
         "banner" => "home",
         "description" => "Твой момент свободы",
         "image" => "/images/banners/2025.png",
-        "link" => "#",
+        "link" => null,
       ],
       [
         "banner" => "home",

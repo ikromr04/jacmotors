@@ -79,3 +79,7 @@
     mask-size: cover;
   }
 }
+
+.model-grid {
+  grid-template-columns: auto 160px;
+}
