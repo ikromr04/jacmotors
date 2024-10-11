@@ -23,3 +23,29 @@
 .title {
   @apply text-center uppercase font-bold text-lg lg:text-2xl;
 }
+
+.model-info {
+  ul, ol {
+    @apply flex flex-col flex-wrap gap-4 lg:grid lg:grid-cols-2 lg:grid-flow-col lg:gap-x-14 lg:gap-y-2 xl:grid-cols-3;
+
+    @media (min-width: 1024px) {
+      grid-template-rows: repeat(6, auto);
+    }
+  }
+
+  li {
+    @apply flex gap-x-2 items-start max-w-[480px];
+
+    &::before {
+      content: "";
+      max-width: 22px;
+      max-height: 18px;
+      min-width: 22px;
+      min-height: 18px;
+      margin-top: 3px;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="22" fill="none"><path fill="%23fff" d="M28 11 16.9 22l-1.337-1.325 8.817-8.738H0v-1.874h24.38l-8.82-8.74L16.9 0 28 11Z"/></svg>');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}

@@ -7,6 +7,8 @@ use App\Models\Car;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use stdClass;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestDriveEmail;
 
 class PageController extends Controller
 {
@@ -43,8 +45,40 @@ class PageController extends Controller
     return view('pages.service');
   }
 
+  public function testDriveShow($name)
+  {
+    $data = new stdClass();
+    $data->model = Car::where('name', $name)->first();
+    $data->models = Car::where('test_drive', true)->get();
+
+    return view('pages.test-drive-show', compact('data'));
+  }
+
+  public function testDrive()
+  {
+    $data = new stdClass();
+    $data->model = Car::where('test_drive', true)->first();
+    $data->models = Car::where('test_drive', true)->get();
+
+    return view('pages.test-drive', compact('data'));
+  }
+
   public function admin()
   {
     return view('pages.admin');
+  }
+
+  public function apply(Request $request)
+  {
+    $data = [
+      'model' => $request->model,
+      'name' => $request->name,
+      'phone' => $request->phone,
+      'email' => $request->email,
+    ];
+
+    Mail::to('ikromr04@gmail.com')->send(new TestDriveEmail($data));
+
+    return 'success';
   }
 }

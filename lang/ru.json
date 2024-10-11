@@ -1,5 +1,6 @@
 {
   "title": {
+    "test-drive": "Тест драйв",
     "page.index": "Главная",
     "page.models": "Модельный ряд",
     "page.models.show": "Модельный ряд",
@@ -7,6 +8,8 @@
     "page.offers": "Спец предложения",
     "page.address": "Наш адрес",
     "page.contacts": "Контакты",
+    "page.test-drive": "Тест драйв",
+    "page.test-drive.show": "Тест драйв",
     "page.admin": "Авдмин панель"
   },
   "header": {

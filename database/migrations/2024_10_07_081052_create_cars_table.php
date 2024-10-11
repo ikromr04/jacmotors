@@ -34,6 +34,7 @@ return new class extends Migration
       $table->string('technology_image');
       $table->text('technology_info');
       $table->boolean('test_drive')->default(false);
+      $table->string('test_drive_image')->nullable();
       $table->timestamps();
     });
   }

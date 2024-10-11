@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html class="scroll-smooth" lang="{{ app()->getLocale() }}">
 
 <head>
   <meta charset="UTF-8">
@@ -39,7 +39,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  @yield('scripts')
+  @stack('scripts')
 </body>
 
 </html>

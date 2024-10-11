@@ -36,6 +36,7 @@ class CarSeeder extends Seeder
         "technology_image" => "/images/models/jac-9-technology.png",
         "technology_info" => "<ul><li>Бесключевой доступ</li><li>Камера 360</li><li>Автохолд</li><li>Полный привод</li><li>3 выбора режима (Полный привод, задний привод, Привод на низком обороте)</li><li>4 режима вождения (snow,normal,eco,sport)</li><li>Автоматический склад боковых зеркал</li><li>Обнаружение слепых зон</li><li>Беспроводная зарядка</li><li>Русифицированное ПО</li><li>Сенсорный экран</li></ul>",
         "test_drive" => true,
+        "test_drive_image" => '/images/models/jac-9-test-drive.png'
       ],
       [
         "name" => "JAC JS6",
@@ -59,6 +60,7 @@ class CarSeeder extends Seeder
         "technology_image" => "/images/models/js6-technology.png",
         "technology_info" => "<ul><li>Беспроводная зарядка</li><li>Бесключевой доступ</li><li>Автоматичесое открытие багажника посредством движения ноги</li><li>Камера 360 \nАвтохолд</li><li>Автопамять сидений</li><li>Автоматический склад боковых зеркал (при закрытии/открытии автомобиля)</li><li>Русификация ПО</li></ul>",
         "test_drive" => true,
+        "test_drive_image" => '/images/models/js6-test-drive.png'
       ],
       [
         "name" => "JAC e-JS4",
@@ -71,7 +73,7 @@ class CarSeeder extends Seeder
         "max_speed" => "402 км Пробег (NEDS)",
         "power" => "110 л.с Мощность",
         "main_image" => "/images/models/e-js4-main.png",
-        "exterior_image" => "/images/models/e-js4-main.png",
+        "exterior_image" => "/images/models/e-js4-exterior.png",
         "exterior_info" => "<ul><li>Кузов из оцинкованного нержавеющего металла</li><li>Интерактивные LED-фары</li><li>Зеркало заднего вида с автоматическим складыванием</li><li>Дневные ходовые огни</li><li>Автоматическое включение фар</li><li>Функция «Следуй за мной домой»</li><li>Приветственные лампы с логотипом JAC</li></ul>",
         "wheels_tires" => "Диски+шины-215/55 R17",
         "load_capacity" => null,
@@ -82,6 +84,7 @@ class CarSeeder extends Seeder
         "technology_image" => "/images/models/e-js4-technology.png",
         "technology_info" => "<ul><li>Бесключевой доступ</li><li>Автохолд</li><li>Start/Stop</li><li>Русифицированное ПО</li><li>Ячеистая батарея (позволяет менять каждую ячейку, а не всю батарею)</li><li>Система кругового обзора 360º</li><li>Сенсорный экран</li></ul>",
         "test_drive" => true,
+        "test_drive_image" => '/images/models/e-js4-test-drive.png'
       ],
       [
         "name" => "JAC J7",
@@ -105,6 +108,7 @@ class CarSeeder extends Seeder
         "technology_image" => "/images/models/j7-technology.png",
         "technology_info" => "<ul><li>Система кругового обзора 360</li><li>Бесключевой доступ</li><li>Автоматичесое открытие багажника посредством движения ноги</li><li>Антиблокировочная система тормозов (ABS)</li><li>Иммобилайзер</li><li>Электрический стояночный тормоз с функцией Auto Hold</li><li>Система стабилизации (ESC)</li><li>Антиблокировочная система тормозов (ABS)</li></ul>",
         "test_drive" => false,
+        "test_drive_image" => null,
       ],
     ];
 
@@ -131,6 +135,7 @@ class CarSeeder extends Seeder
         "technology_image" => $model["technology_image"],
         "technology_info" => $model["technology_info"],
         "test_drive" => $model["test_drive"],
+        "test_drive_image" => $model["test_drive_image"],
       ]);
     }
   }
