@@ -5,7 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="keywords" content="jac джак моторс motors Душанбе официальный сайт Таджикистан легковые автомобили сайт китайский авто машина 2018 легковые автосалон automobile car">
+  <meta property="og:site_name" content="JAC Motors Tajikistan">
+  <meta property="og:type" content="object">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="description" content="Автосалон JAC Motors (Джак Моторс). Каталог моделей китайских легковых автомобилей, цены.">
+  <meta property="og:description" content="Автосалон JAC Motors (Джак Моторс). Каталог моделей китайских легковых автомобилей, цены.">
+  <meta property="og:title" content="JAC Motors Tajikistan">
+  <meta property="og:image" content="{{ asset('/favicons/180x180.png') }}">
+  <meta property="og:image:alt" content="JAC Motors Tajikistan – Лого">
+  <meta name="twitter:title" content="JAC Motors Tajikistan">
+  <meta name="twitter:image" content="{{ asset('/favicons/180x180.png') }}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
