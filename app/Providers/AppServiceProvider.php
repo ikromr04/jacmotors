@@ -26,11 +26,14 @@ class AppServiceProvider extends ServiceProvider
 
     view()->composer(['*'], function ($view) {
       $routeName = '';
-      $documentTitle = '';
+      $documentTitle = env('APP_NAME');
 
       if (request()->route()) {
         $routeName = request()->route()->getName();
-        $documentTitle = env('APP_NAME') . ' - ' . __('title')[$routeName];
+
+        if (isset(__('title')[$routeName])) {
+          $documentTitle = env('APP_NAME') . ' - ' . __('title')[$routeName];
+        }
       }
 
       return $view->with([
