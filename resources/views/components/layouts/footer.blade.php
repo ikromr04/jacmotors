@@ -24,7 +24,7 @@
     <div class="flex flex-col items-center gap-10 mb-10 lg:flex-row-reverse lg:justify-between">
       <ul class="flex gap-x-4">
         <li>
-          <a class="flex items-center justify-center w-11 h-11 bg-[#D9D9D9] bg-opacity-30 rounded-full pr-1 transition-all duration-300 outline-none focus:outline-none focus:bg-[#BA2031] hover:bg-[#BA2031]" href="" target="_blank">
+          <a class="flex items-center justify-center w-11 h-11 bg-[#D9D9D9] bg-opacity-30 rounded-full pr-1 transition-all duration-300 outline-none focus:outline-none focus:bg-[#BA2031] hover:bg-[#BA2031]" href="https://t.me/jacmotorstj" target="_blank">
             <svg width="24" height="24">
               <title>{{ __('telegram') }}</title>
               <use xlink:href="#telegram" />
