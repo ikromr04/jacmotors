@@ -77,7 +77,7 @@ class PageController extends Controller
       'email' => $request->email,
     ];
 
-    Mail::to('ikromr04@gmail.com')->send(new TestDriveEmail($data));
+    Mail::to('info@jacmotors.tj')->send(new TestDriveEmail($data));
 
     return 'success';
   }
