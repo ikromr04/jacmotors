@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <section class="container py-8 lg:grid lg:grid-cols-2 lg:py-20">
+    <section class="container py-8 lg:grid lg:grid-cols-2 lg:py-20" id="charge">
       <div class="self-center">
         <h2 class="title mb-6 lg:text-left">
           Зарядная станция для <br> электромобилей
@@ -88,7 +88,7 @@
       </div>
     </section>
 
-    <section class="container flex flex-col-reverse py-8 lg:grid lg:grid-cols-2 lg:py-20 lg:gap-8">
+    <section class="container flex flex-col-reverse py-8 lg:grid lg:grid-cols-2 lg:py-20 lg:gap-8" id="serv">
       <div class="relative flex mx-auto max-w-max lg-mask-left lg:max-w-full lg:w-full">
         <img class="lg:object-cover lg:w-full" src="{{ asset('/images/service-2.png') }}" width="418" height="550" alt="Зарядная станция для электромобилей">
       </div>

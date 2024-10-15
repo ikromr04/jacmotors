@@ -232,7 +232,7 @@
       </ul>
 
       <div class="swiper models">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper flex">
           @foreach ($data->models as $key => $model)
             <div class="swiper-slide text-white grid model-grid rounded-md overflow-hidden min-h-[190px] mb-10" data-slide="{{ $model->category_id }}">
               <img class="w-full h-full object-cover" src="{{ $model->main_image }}" width="1440" height="560" alt="{{ $model->name }}">
@@ -257,7 +257,7 @@
           @endforeach
         </div>
 
-        <div class="container flex items-baseline gap-x-8 justify-center">
+        <div class="container flex items-baseline gap-x-8 justify-center" data-control>
           <button class="swiper-button-prev after:hidden text-inherit m-0 transform -scale-x-100 flex items-center justify-center w-8 h-8 relative bottom-0 top-0 left-0 right-0">
             <svg class="flex items-center !w-[26px] !h-[22px]" width="26" height="22">
               <use xlink:href="#arrow" />
@@ -279,7 +279,7 @@
 
         <ul class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           <li>
-            <a class="flex flex-col items-center gap-10 pb-4 border-b-2">
+            <a class="flex flex-col items-center gap-10 pb-4 border-b-2 border-b-transparent hover:border-b-white" href="{{ route('page.service') }}#charge">
               <svg width="86" height="86">
                 <use xlink:href="#station" />
               </svg>
@@ -287,7 +287,7 @@
             </a>
           </li>
           <li>
-            <a class="flex flex-col items-center gap-10 pb-4 hover:border-b-2" href="{{ route('page.test-drive') }}">
+            <a class="flex flex-col items-center gap-10 pb-4 border-b-2 border-b-transparent hover:border-b-white" href="{{ route('page.test-drive') }}">
               <svg width="85" height="86">
                 <use xlink:href="#test-drive" />
               </svg>
@@ -295,7 +295,7 @@
             </a>
           </li>
           <li>
-            <a class="flex flex-col items-center gap-10 pb-4 hover:border-b-2" href="{{ route('page.service') }}">
+            <a class="flex flex-col items-center gap-10 pb-4 border-b-2 border-b-transparent hover:border-b-white" href="{{ route('page.service') }}#serv">
               <svg width="86" height="86">
                 <use xlink:href="#service" />
               </svg>
@@ -386,8 +386,23 @@
 
     modelsSection.addEventListener('click', (evt) => {
       if (evt.target.closest('[data-category]')) {
-        modelsSwiper.slideTo(0)
+        const
+          control = modelsSection.querySelector('[data-control]'),
+          wrapper = modelsSection.querySelector('.swiper-wrapper');
+
+          modelsSwiper.slideTo(0);
         modelsSection.dataset.models = evt.target.dataset.category;
+        if (evt.target.dataset.category == '0') {
+          modelsSwiper.allowTouchMove = true;
+          control.style.opacity = '1';
+          control.style.pointerEvents = 'all';
+          wrapper.style.flexWrap = 'nowrap';
+        } else {
+          wrapper.style.flexWrap = 'wrap';
+          control.style.opacity = '0';
+          control.style.pointerEvents = 'none';
+          modelsSwiper.allowTouchMove = false;
+        }
       }
     })
   </script>
