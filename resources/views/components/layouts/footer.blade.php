@@ -53,7 +53,7 @@
     </div>
 
     <div class="flex flex-col items-center gap-4 text-[#ADADAD] lg:flex-row-reverse lg:justify-between">
-      <a class="transition-all duration-300 outline-none focus:outline-none focus:text-white hover:text-white" href="">
+      <a class="transition-all duration-300 outline-none focus:outline-none focus:text-white hover:text-white" href="{{ asset('privacy-policy.pdf') }}" target="_blank">
         Политика конфиденциальности
       </a>
       <p>
