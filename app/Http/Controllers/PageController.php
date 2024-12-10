@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use stdClass;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TestDriveEmail;
+use App\Models\News;
 
 class PageController extends Controller
 {
@@ -19,6 +20,7 @@ class PageController extends Controller
     $data->testDrives = Car::where('test_drive', true)->get();
     $data->categories = Category::get();
     $data->models = Car::get();
+    $data->news = News::get();
 
     return view('pages.index', compact('data'));
   }
@@ -61,6 +63,19 @@ class PageController extends Controller
     $data->models = Car::where('test_drive', true)->get();
 
     return view('pages.test-drive', compact('data'));
+  }
+
+  public function offers()
+  {
+    return view('pages.offers');
+  }
+
+  public function newsShow($id)
+  {
+    $data = new stdClass();
+    $data->news = News::find($id);
+
+    return view('pages.news.show', compact('data'));
   }
 
   public function admin()

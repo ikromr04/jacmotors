@@ -53,6 +53,101 @@
       }
     }
 
+    .specs {
+      .swiper-pagination {
+        display: flex;
+        align-items: center;
+        max-width: max-content;
+        gap: 8px;
+
+        @media (min-width: 1024px) {
+          bottom: 28px;
+          gap: 16px;
+        }
+      }
+
+      .swiper-pagination {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 12px;
+
+        @media (min-width: 1024px) {
+          margin-bottom: 0;
+        }
+      }
+
+      .swiper-pagination-bullet {
+        background-color: black;
+        opacity: 1;
+        display: block;
+        width: 4px;
+        height: 4px;
+        margin: 0 !important;
+
+        @media (min-width: 1024px) {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: transparent;
+        width: 8px;
+        height: 8px;
+        border: 1px solid #AE2C27;
+
+        @media (min-width: 1024px) {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+
+    .news {
+      .swiper-pagination {
+        display: flex;
+        align-items: center;
+        max-width: max-content;
+        gap: 8px;
+      }
+
+      .swiper-pagination {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+      }
+
+      .swiper-pagination-bullet {
+        background-color: black;
+        opacity: 1;
+        display: block;
+        width: 4px;
+        height: 4px;
+        margin: 0 !important;
+
+        @media (min-width: 1024px) {
+          width: 8px;
+          height: 8px;
+        }
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: transparent;
+        width: 8px;
+        height: 8px;
+        border: 1px solid #AE2C27;
+
+        @media (min-width: 1024px) {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+
     .test-drive {
       .swiper-button-disabled {
         display: none;
@@ -309,27 +404,70 @@
     <section class="mb-10 lg:mb-20" id="offers">
       <h2 class="title mt-12 mb-10">Спец предложения</h2>
 
-      <div class="text-white lg:grid lg:grid-cols-2">
-        <img class="h-[252px] w-full object-cover" src="{{ asset('images/special-offer.jpg') }}" width="1000" height="252" alt="Спец предложения">
+      <div class="specs">
+        <div class="swiper-pagination"></div>
 
-        <div class="bg-[#303030]">
-          <div class="container py-8 lg:w-auto px-10 lg:flex lg:flex-col lg:justify-center lg:h-[252px]">
-            <small class="opacity-70 uppercase mb-4 block">Спецпредложения</small>
-            <h3 class="title !text-left mb-6">
-              Льготный кредит по низкой процентной ставке
-            </h3>
-            <a class="text-sm flex items-center gap-3 max-w-max transition-all duration-300 hover:opacity-60 lg:text-base" href="{{ route('page.service') }}">
-              Подробнее
-              <span class="flex items-center justify-center w-5 h-5 rounded-full border pl-[1px]">
-                <svg width="4" height="10">
-                  <use xlink:href="#more-info" />
-                </svg>
-              </span>
-            </a>
+        <div class="swiper">
+          <div class="swiper-wrapper relative">
+            @foreach (range(1, 3) as $key)
+              <div class="swiper-slide">
+                <div class="text-white lg:grid lg:grid-cols-2">
+                  <img class="h-[252px] w-full object-cover" src="{{ asset('images/special-offer.jpg') }}" width="1000" height="252" alt="Спец предложения">
+
+                  <div class="bg-[#303030]">
+                    <div class="container py-8 lg:w-auto px-10 lg:flex lg:flex-col lg:justify-center lg:h-[252px]">
+                      <small class="opacity-70 uppercase mb-4 block">Спецпредложения</small>
+                      <h3 class="title !text-left mb-6">
+                        Льготный кредит по низкой процентной ставке
+                      </h3>
+                      <a class="text-sm flex items-center gap-3 max-w-max transition-all duration-300 hover:opacity-60 lg:text-base" href="{{ route('page.offers') }}">
+                        Подробнее
+                        <span class="flex items-center justify-center w-5 h-5 rounded-full border pl-[1px]">
+                          <svg width="4" height="10">
+                            <use xlink:href="#more-info" />
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            @endforeach
           </div>
         </div>
       </div>
     </section>
+
+    <div class="news container lg:!pb-20 !max-w-[1300px] mx-auto">
+      <div class="swiper">
+        <div class="swiper-wrapper relative">
+          @foreach ($data->news as $news)
+            <div class="swiper-slide">
+              <div class="relative z-0 rounded-[5px] overflow-hidden text-white min-h-[480px] flex flex-col justify-end">
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/70 to-transparent"></div>
+                <img class="absolute top-0 left-0 w-full h-full object-cover -z-10" src="{{ asset("/images/$news->img") }}" alt="{{ $news->title }}">
+
+                <div class="relative z-0 py-10 px-9">
+                  <p class="mb-2">{{ $news->category }}</p>
+                  <h3 class="mb-3">{{ $news->title }}</h3>
+
+                  <a class="text-sm flex items-center gap-3 transition-all duration-300 hover:opacity-60 lg:text-base" href="{{ route('page.news.show', $news->id) }}">
+                    Подробнее
+                    <span class="flex items-center justify-center w-5 h-5 rounded-full border pl-[1px]">
+                      <svg width="4" height="10">
+                        <use xlink:href="#more-info" />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          @endforeach
+        </div>
+      </div>
+
+      <div class="swiper-pagination pb-10 pt-6 lg:!hidden"></div>
+    </div>
   </main>
 @endsection
 
@@ -342,6 +480,38 @@
       },
       pagination: {
         el: '.banners .swiper-pagination',
+      },
+    });
+
+    new Swiper('.news .swiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+      },
+      pagination: {
+        el: '.news .swiper-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 24
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 32
+        },
+      },
+    });
+
+    new Swiper('.specs .swiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+      },
+      pagination: {
+        el: '.specs .swiper-pagination',
+        clickable: true,
       },
     });
 
@@ -390,7 +560,7 @@
           control = modelsSection.querySelector('[data-control]'),
           wrapper = modelsSection.querySelector('.swiper-wrapper');
 
-          modelsSwiper.slideTo(0);
+        modelsSwiper.slideTo(0);
         modelsSection.dataset.models = evt.target.dataset.category;
         if (evt.target.dataset.category == '0') {
           modelsSwiper.allowTouchMove = true;

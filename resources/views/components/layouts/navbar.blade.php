@@ -20,7 +20,7 @@
       </a>
     </li>
     <li>
-      <a class="block py-2 hover:text-[#BA2031] transition-all duration-300 focus:text-[#BA2031] outline-none focus:outline-none relative" href="{{ route('page.index') . '#offers' }}">
+      <a class="block py-2 hover:text-[#BA2031] transition-all duration-300 focus:text-[#BA2031] outline-none focus:outline-none relative{{ $routeName === 'page.offers' ? ' lg:border-b-[1px] lg:border-white text-[#BA2031] lg:text-inherit' : '' }}" href="{{ route('page.offers') }}">
         {{ __('title')['page.offers'] }}
       </a>
     </li>

@@ -12,6 +12,8 @@ Route::get('/test-drive/{name}', [PageController::class, 'testDriveShow'])->name
 Route::get('/test-drive', [PageController::class, 'testDrive'])->name('page.test-drive');
 Route::post('/test-drive', [PageController::class, 'apply'])->name('test-drive');
 Route::get('/service', [PageController::class, 'service'])->name('page.service');
+Route::get('/offers', [PageController::class, 'offers'])->name('page.offers');
+Route::get('/news/{id}', [PageController::class, 'newsShow'])->name('page.news.show');
 
 Route::get('/admin{path}', [PageController::class, 'admin'])
   ->where('path', '.*')
