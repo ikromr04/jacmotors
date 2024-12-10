@@ -276,35 +276,82 @@
           </button>
         </div>
       </div>
-      <div class="swiper-wrapper relative">
-        @foreach ($data->testDrives as $car)
-          <div class="swiper-slide overflow-hidden">
-            <div class="container flex flex-col uppercase justify-between h-full min-h-[520px] pb-6 pt-20">
-              <img class="absolute -top-[2px] right-[calc(50%-64px)] w-[calc(50%+65px)] brightness-[30%] -z-10 h-[110%] object-cover mask-left" src="{{ $car->main_image }}" width="1440" height="560" alt="{{ $car->name }}">
-              <img class="absolute -top-[2px] left-[calc(50%-65px)] w-[calc(50%+65px)] h-[110%] object-cover -z-10 mask-right" src="{{ $car->exterior_image }}" width="1440" height="560" alt="{{ $car->name }}">
+      <div class="swiper-wrapper relative -pt-1">
+        <div class="swiper-slide overflow-hidden relative">
+          <img class="absolute top-0 left-0 w-full h-full object-cover -z-10" src="{{ asset('/images/t-drive-js6.jpg') }}" width="1440" height="560">
 
-              <div>
-                <h3 class="text-5xl font-bold mb-4">{{ $car->name }}</h3>
+          <div class="container flex flex-col uppercase justify-end h-full min-h-[520px] pb-6 pt-20 relative z-0">
+            <div>
+              <h3 class="text-5xl font-bold mb-4">JAC JS6</h3>
 
-                <a class="text-sm flex items-center gap-3 max-w-max transition-all duration-300 hover:opacity-60 lg:text-base" href="{{ route('page.models.show', $car->name) }}">
-                  Подробнее
-                  <span class="flex items-center justify-center w-5 h-5 rounded-full border pl-[1px]">
-                    <svg width="4" height="10">
-                      <use xlink:href="#more-info" />
-                    </svg>
-                  </span>
-                </a>
-              </div>
-
-              <a class="flex items-center gap-3 uppercase max-w-max" href="{{ route('page.test-drive.show', $car->name) }}">
-                <svg width="33" height="37">
-                  <use xlink:href="#sign-up" />
-                </svg>
-                Записаться на тест-драйв
+              <a class="text-sm flex items-center gap-3 max-w-max mb-28 transition-all duration-300 hover:opacity-60 lg:text-base" href="{{ route('page.models.show', 'JAC%20JS6') }}">
+                Подробнее
+                <span class="flex items-center justify-center w-5 h-5 rounded-full border pl-[1px]">
+                  <svg width="4" height="10">
+                    <use xlink:href="#more-info" />
+                  </svg>
+                </span>
               </a>
             </div>
+
+            <a class="flex items-center gap-3 uppercase max-w-max" href="{{ route('page.test-drive.show', 'JAC%20JS6') }}">
+              <svg width="33" height="37">
+                <use xlink:href="#sign-up" />
+              </svg>
+              Записаться на тест-драйв
+            </a>
           </div>
-        @endforeach
+        </div>
+        <div class="swiper-slide overflow-hidden relative">
+          <img class="absolute top-0 left-0 w-full h-full object-cover -z-10" src="{{ asset('/images/t-drive-t9.jpg') }}" width="1440" height="560">
+
+          <div class="container flex flex-col uppercase justify-end h-full min-h-[520px] pb-6 pt-20 relative z-0">
+            <div>
+              <h3 class="text-5xl font-bold mb-4">JAC T9</h3>
+
+              <a class="text-sm flex items-center gap-3 max-w-max mb-28 transition-all duration-300 hover:opacity-60 lg:text-base" href="{{ route('page.models.show', 'JAC%20T9') }}">
+                Подробнее
+                <span class="flex items-center justify-center w-5 h-5 rounded-full border pl-[1px]">
+                  <svg width="4" height="10">
+                    <use xlink:href="#more-info" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+
+            <a class="flex items-center gap-3 uppercase max-w-max" href="{{ route('page.test-drive.show', 'JAC%20T9') }}">
+              <svg width="33" height="37">
+                <use xlink:href="#sign-up" />
+              </svg>
+              Записаться на тест-драйв
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide overflow-hidden relative">
+          <img class="absolute top-0 left-0 w-full h-full object-cover -z-10" src="{{ asset('/images/t-drive-ejs4.jpg') }}" width="1440" height="560">
+
+          <div class="container flex flex-col uppercase justify-end h-full min-h-[520px] pb-6 pt-20 relative z-0">
+            <div>
+              <h3 class="text-5xl font-bold mb-4">JAC e-JS4</h3>
+
+              <a class="text-sm flex items-center gap-3 max-w-max mb-28 transition-all duration-300 hover:opacity-60 lg:text-base" href="{{ route('page.models.show', 'JAC%20e-JS4') }}">
+                Подробнее
+                <span class="flex items-center justify-center w-5 h-5 rounded-full border pl-[1px]">
+                  <svg width="4" height="10">
+                    <use xlink:href="#more-info" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+
+            <a class="flex items-center gap-3 uppercase max-w-max" href="{{ route('page.test-drive.show', 'JAC%20e-JS4') }}">
+              <svg width="33" height="37">
+                <use xlink:href="#sign-up" />
+              </svg>
+              Записаться на тест-драйв
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -329,10 +376,12 @@
       <div class="swiper models">
         <div class="swiper-wrapper flex">
           @foreach ($data->models as $key => $model)
-            <div class="swiper-slide text-white grid model-grid rounded-md overflow-hidden min-h-[190px] mb-10" data-slide="{{ $model->category_id }}">
-              <img class="w-full h-full object-cover" src="{{ $model->main_image }}" width="1440" height="560" alt="{{ $model->name }}">
+            <div class="swiper-slide relative z-0 text-white grid model-grid rounded-md overflow-hidden min-h-[190px] mb-10" data-slide="{{ $model->category_id }}">
+              <div>
+                <img class="absolute w-full h-full -z-10 object-cover" src="{{ $model->card_image }}" width="1440" height="560" alt="{{ $model->name }}">
+              </div>
 
-              <div class="{{ $key % 2 == 0 ? 'bg-[#2D2D2D]' : 'bg-[#646363]' }} grow p-4 min-w-[160px] flex flex-col pb-6">
+              <div class="{{ $key % 2 == 0 ? 'bg-[#2D2D2D]' : 'bg-[#646363]' }} grow p-4 min-w-[160px] flex flex-col pb-6 relative z-0">
                 <div class="opacity-70 flex gap-2 items-center leading-none mb-auto text-xs">
                   <time class="flex pr-2 border-r">{{ $model->year }}</time>
                   {{ mb_substr($model->category->name, 0, mb_strlen($model->category->name) - 1) }}
@@ -373,7 +422,7 @@
         <h2 class="title mb-10">Услуги и сервис</h2>
 
         <ul class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-          <li>
+          <li class="relative before:hidden lg:before:flex before:absolute before:top-[10%] before:right-0 before:w-1 before:h-16 before:bg-white/25">
             <a class="flex flex-col items-center gap-10 pb-4 border-b-2 border-b-transparent hover:border-b-white" href="{{ route('page.service') }}#charge">
               <svg width="86" height="86">
                 <use xlink:href="#station" />
@@ -381,7 +430,7 @@
               Зарядная станция
             </a>
           </li>
-          <li>
+          <li class="relative before:hidden lg:before:flex before:absolute before:top-[10%] before:right-0 before:w-1 before:h-16 before:bg-white/25">
             <a class="flex flex-col items-center gap-10 pb-4 border-b-2 border-b-transparent hover:border-b-white" href="{{ route('page.test-drive') }}">
               <svg width="85" height="86">
                 <use xlink:href="#test-drive" />

@@ -103,10 +103,12 @@
       <div class="models">
         <div class="grid sm:grid-cols-2 gap-6 lg:grid-cols-3 lg:gap-x-[72px] lg:gap-y-24">
           @foreach ($data->models as $key => $model)
-            <div class="text-white flex rounded-md overflow-hidden lg:min-h-[190px]" data-slide="{{ $model->category_id }}">
-              <img class="w-[calc(100%-160px)] h-full object-cover" src="{{ $model->main_image }}" width="1440" height="560" alt="{{ $model->name }}">
+            <div class="relative z-0 text-white grid model-grid rounded-md overflow-hidden lg:min-h-[190px]" data-slide="{{ $model->category_id }}">
+              <div>
+                <img class="absolute w-full h-full -z-10 object-cover" src="{{ $model->card_image }}" width="1440" height="560" alt="{{ $model->name }}">
+              </div>
 
-              <div class="{{ $key % 2 == 0 ? 'bg-[#2D2D2D]' : 'bg-[#646363]' }} grow p-4 min-w-[160px] flex flex-col pb-6">
+              <div class="{{ $key % 2 == 0 ? 'bg-[#2D2D2D]' : 'bg-[#646363]' }} grow p-4 min-w-[160px] flex flex-col pb-6 relative z-0">
                 <div class="opacity-70 flex gap-2 items-center leading-none mb-auto text-xs">
                   <time class="flex pr-2 border-r">{{ $model->year }}</time>
                   {{ mb_substr($model->category->name, 0, mb_strlen($model->category->name) - 1) }}

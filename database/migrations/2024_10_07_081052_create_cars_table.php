@@ -23,6 +23,7 @@ return new class extends Migration
       $table->string('max_speed');
       $table->string('power');
       $table->string('main_image');
+      $table->string('card_image');
       $table->string('exterior_image');
       $table->text('exterior_info');
       $table->string('wheels_tires');
