@@ -499,15 +499,6 @@
                 <div class="relative z-0 py-10 px-9">
                   <p class="mb-2">{{ $news->category }}</p>
                   <h3 class="mb-3">{{ $news->title }}</h3>
-
-                  <a class="text-sm flex items-center gap-3 transition-all duration-300 hover:opacity-60 lg:text-base" href="{{ route('page.news.show', $news->id) }}">
-                    Подробнее
-                    <span class="flex items-center justify-center w-5 h-5 rounded-full border pl-[1px]">
-                      <svg width="4" height="10">
-                        <use xlink:href="#more-info" />
-                      </svg>
-                    </span>
-                  </a>
                 </div>
               </div>
             </div>
