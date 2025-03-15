@@ -15,6 +15,9 @@
         <a class="transition-all duration-300 outline-none focus:outline-none focus:text-[#BA2031] hover:text-[#BA2031]" href="tel:+992446505070">
           +992 446 50 50 70
         </a>
+        <a class="transition-all duration-300 outline-none focus:outline-none focus:text-[#BA2031] hover:text-[#BA2031]" href="tel:++992900211421">
+          +992 900 21 14 21
+        </a>
         <a class="transition-all duration-300 outline-none focus:outline-none focus:text-[#BA2031] hover:text-[#BA2031]" href="mailto:info@jacmotors.tj">
           info@jacmotors.tj
         </a>
